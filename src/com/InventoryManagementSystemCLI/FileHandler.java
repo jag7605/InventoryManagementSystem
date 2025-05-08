@@ -4,6 +4,7 @@
  */
 package com.InventoryManagementSystemCLI;
 
+import com.Inventory.model.Product;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
