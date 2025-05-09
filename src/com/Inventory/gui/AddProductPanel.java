@@ -8,6 +8,7 @@ package com.Inventory.gui;
  *
  * @author jagrithnarayan
  */
+
 public class AddProductPanel {
     
 }
