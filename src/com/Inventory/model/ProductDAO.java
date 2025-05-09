@@ -11,6 +11,8 @@ package com.Inventory.model;
 // DAO stands for Data Access Object. It’s a design pattern used to separate the code that interacts with the 
 //database from the rest of the application logic (like your InventoryManager or GUI classes).
 
+
+// test test test test 
 public class ProductDAO {
     
 }
