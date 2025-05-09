@@ -9,7 +9,7 @@ package com.Inventory.gui;
  * @author jagrithnarayan
  */
 
-public class AddProductPanel {
-    //testing comment
+public class AddProductPanel 
+{
     
 }
