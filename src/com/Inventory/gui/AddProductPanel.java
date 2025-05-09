@@ -10,5 +10,6 @@ package com.Inventory.gui;
  */
 
 public class AddProductPanel {
+    //testing comment
     
 }
