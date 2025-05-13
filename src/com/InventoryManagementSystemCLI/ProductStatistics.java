@@ -56,5 +56,5 @@ public class ProductStatistics {
         // return the most expensive item
         return mostExpensive;
     }
-
+    
 }
