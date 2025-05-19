@@ -17,13 +17,12 @@ public class DatabaseConnector {
 
     // Store the database connection that will be used for the entire project
     private static Connection connection;
+    
+    // Allow external test code to override the connection (used in testing)
+    public static void setTestConnection(Connection testConn) {
+        connection = testConn;
+    }
 
-    // Setting the name of the database. Final as it will not change
-    private static final String DB_NAME = "inventoryDB";
-
-    // The URL that will be used to connect to the Derby database
-    //                                           database type + db name + will create the database if it doesnt exist
-    private static final String CONNECTION_URL = "jdbc:derby:" + DB_NAME + ";create=true";
 
     // Private constructor to prevent multiple connections. We only want one
     private DatabaseConnector() {
@@ -31,27 +30,24 @@ public class DatabaseConnector {
     }
 
     // Method to return the database connection. Will create one if it doesn't exist
-    public static Connection getConnection() {
+     public static Connection getConnection() {
         if (connection == null) {
             try {
                 // Load the derby database driver
                 Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-
-                // Create a new database connection using the connection url
-                connection = DriverManager.getConnection(CONNECTION_URL);
-
+                
+                // Create a new database connection
+                connection = DriverManager.getConnection("jdbc:derby:inventoryDB;create=true");
+                
                 // Print a success message to show that the user is connected to the database
-                System.out.println("Connected to database: " + DB_NAME);
-
+                System.out.println("Connected to database: inventoryDB");
             } catch (ClassNotFoundException e) {
-                System.out.println("Derby driver not found");
-
+                System.out.println("Derby driver not found.");
             } catch (SQLException e) {
                 // Print message if the program could not connect to the database
-                System.out.println("Error. Could not connect to database");
+                System.out.println("Error connecting to main database");
             }
         }
-        // return the conection 
         return connection;
     }
 
