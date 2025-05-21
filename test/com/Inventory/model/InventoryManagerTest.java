@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.List;
 import org.junit.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.*; 
 
 /**
  *
