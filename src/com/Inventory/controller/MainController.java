@@ -8,6 +8,6 @@ package com.Inventory.controller;
  *
  * @author jagrithnarayan
  */
-public class InventoryController {
+public class MainController {
     
 }
