@@ -16,15 +16,15 @@ import java.util.List;
 // this class handles the restock logic. Will return a list of products that need to be restocked for the gui to display
 public class RestockController {
     
-     private final InventoryManager inventoryManager; // reference to inventory manager
+     private final ProductController productController; // reference to inventory manager
      
      // constructor to create a new InventoryManager
-    public RestockController() {
-        this.inventoryManager = new InventoryManager();
+    public RestockController(ProductController productController) {
+    this.productController = productController;
     }
     
     // method to return a list of all products that need to be restocked
     public List<Product> getLowStockProducts() {
-        return RestockManager.checkLowStock(inventoryManager.getInventory());
+        return RestockManager.checkLowStock(productController.getAllProducts());
     }  
 }

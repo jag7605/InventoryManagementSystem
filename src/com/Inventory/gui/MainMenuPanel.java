@@ -43,7 +43,7 @@ public class MainMenuPanel extends JPanel
         // add menu buttons to grant access to it
         addButton("View Inventory", "VIEW", actionHandler);  // Button to view products
         addButton("Total Stock Value", "VALUE", actionHandler);  // Button to view Total stock vlue
-        addButton("Most Expensive Product", "Expensive", actionHandler);  // Button to view most expensive product
+        addButton("Most Expensive Product", "EXPENSIVE", actionHandler);  // Button to view most expensive product
         
         if (isAdmin) // Only visible for admin
         {
