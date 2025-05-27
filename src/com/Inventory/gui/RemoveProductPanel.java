@@ -14,10 +14,10 @@ import java.awt.event.ActionListener;
 public class RemoveProductPanel extends JPanel 
 {
     private JTextField idField;
-    private JButton removeButton;
+    private JButton removeButton, backButton;
     private JLabel messageLabel;
     
-    public RemoveProductPanel(ActionListener actionHandler) 
+    public RemoveProductPanel(ActionListener actionHandler, ActionListener backListener) 
     {
         setLayout(new GridLayout(4, 2, 10, 10));
         
@@ -27,6 +27,11 @@ public class RemoveProductPanel extends JPanel
         
         messageLabel = new JLabel();
         add(messageLabel);
+        
+        backButton = new JButton("Back to Menu");
+        backButton.setActionCommand("BACK");
+        backButton.addActionListener(backListener);
+        add(backButton);
     }
     
     public String getID() 

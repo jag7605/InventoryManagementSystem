@@ -16,10 +16,10 @@ import java.awt.event.ActionListener;
 public class AddProductPanel extends JPanel
 {
     private JTextField idField, nameField, categoryField, priceField, quantityField;
-    private JButton addButton;
+    private JButton addButton, backButton;
     private JLabel messageLabel;
     
-    public AddProductPanel(ActionListener actionHandler) 
+    public AddProductPanel(ActionListener actionHandler, ActionListener backListener) 
     {
         // layout with 7 rows 2 collums
         setLayout(new GridLayout(7, 2, 10, 10));
@@ -62,6 +62,11 @@ public class AddProductPanel extends JPanel
         addButton.addActionListener(actionHandler);
         // add the button to panel 
         add(addButton);
+        
+        backButton = new JButton("Back to Menu");
+        backButton.setActionCommand("BACK");
+        backButton.addActionListener(backListener);
+        add(backButton);
     }
     
     // getter method to retrieve product id from textField

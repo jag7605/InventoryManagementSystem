@@ -13,10 +13,10 @@ import java.awt.event.ActionListener;
 public class UpdateProductPanel extends JPanel
 {
     private JTextField idField, priceField, quantityField;
-    private JButton updateButton;
+    private JButton updateButton, backButton;
     private JLabel messageLabel;
    
-    public UpdateProductPanel(ActionListener actionHandler)
+    public UpdateProductPanel(ActionListener actionHandler, ActionListener backListener)
     {
         setLayout(new GridLayout(5, 2, 10, 10));
         
@@ -36,6 +36,11 @@ public class UpdateProductPanel extends JPanel
         updateButton.setActionCommand("UPDATE_PRODUCT");
         updateButton.addActionListener(actionHandler);
         add(updateButton);
+        
+        backButton = new JButton("Back to Menu");
+        backButton.setActionCommand("BACK");
+        backButton.addActionListener(backListener);
+        add(backButton);
     }
     
     public String getID() {

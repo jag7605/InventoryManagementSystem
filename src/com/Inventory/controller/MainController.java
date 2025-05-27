@@ -40,16 +40,16 @@ public class MainController {
         loginPanel = new LoginPanel(new LoginHandler());
         panelManager.addPanel("login", loginPanel);
         
-        addPanel = new AddProductPanel(new AddProductListener());
+        addPanel = new AddProductPanel(new AddProductListener(), new BackToMenuListener());
         panelManager.addPanel("addProduct", addPanel);
 
         viewPanel = new ViewInventoryPanel();
         panelManager.addPanel("viewInventory", viewPanel);
 
-        updatePanel = new UpdateProductPanel(new UpdateProductListener());
+        updatePanel = new UpdateProductPanel(new UpdateProductListener(), new BackToMenuListener());
         panelManager.addPanel("updateProduct", updatePanel);
 
-        removePanel = new RemoveProductPanel(new RemoveProductListener());
+        removePanel = new RemoveProductPanel(new RemoveProductListener(), new BackToMenuListener());
         panelManager.addPanel("removeProduct", removePanel);
 
         restockPanel = new RestockAlertPanel();
@@ -81,6 +81,15 @@ public class MainController {
             {
                 loginPanel.showMessage("Invalid password. Try again.");
             }
+        }
+    }
+    
+    private class BackToMenuListener implements ActionListener 
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) 
+        {
+            panelManager.showPanel("menu");
         }
     }
     
