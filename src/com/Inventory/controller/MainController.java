@@ -132,6 +132,10 @@ public class MainController {
                     JOptionPane.showMessageDialog(null, "Total Stock Value: $" +totalValue);
                     break;
                     
+                case "UPDATE":
+                    panelManager.showPanel("updateProduct");
+                    break;
+                    
                 case "EXPENSIVE" :
                     Product p = productController.getMostExpensiveProduct();
                     if(p != null)

@@ -33,15 +33,15 @@ public class UpdateProductPanel extends JPanel
         quantityField = new JTextField();
         add(quantityField);
         
-        updateButton = new JButton("Update Product");
-        updateButton.setActionCommand("UPDATE_PRODUCT");
-        updateButton.addActionListener(actionHandler);
-        add(updateButton);
-        
         backButton = new JButton("Back to Menu");
         backButton.setActionCommand("BACK");
         backButton.addActionListener(backListener);
         add(backButton);
+        
+        updateButton = new JButton("Update Product");
+        updateButton.setActionCommand("UPDATE_PRODUCT");
+        updateButton.addActionListener(actionHandler);
+        add(updateButton);
     }
     
     public String getID() {
