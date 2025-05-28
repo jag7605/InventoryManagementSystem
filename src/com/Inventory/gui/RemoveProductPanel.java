@@ -19,7 +19,7 @@ public class RemoveProductPanel extends JPanel
     
     public RemoveProductPanel(ActionListener removeHandler, ActionListener backListener) 
     {
-        setLayout(new GridLayout(4, 2, 10, 10));
+        setLayout(new GridLayout(6, 2, 10, 10));
         
         add(new JLabel("Enter Product ID to Remove"));
         idField = new JTextField();

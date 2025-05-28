@@ -19,7 +19,9 @@ public class UpdateProductPanel extends JPanel
    
     public UpdateProductPanel(ActionListener actionHandler, ActionListener backListener)
     {
-        setLayout(new GridLayout(5, 2, 10, 10));
+        setLayout(new GridLayout(6, 2, 10, 10));
+        
+        setBorder(BorderFactory.createEmptyBorder(20, 40, 20, 40));
         
         add(new JLabel("Product ID:"));
         idField = new JTextField();
@@ -32,6 +34,10 @@ public class UpdateProductPanel extends JPanel
         add(new JLabel("New Quantity:"));
         quantityField = new JTextField();
         add(quantityField);
+        
+        messageLabel = new JLabel();
+        add(messageLabel);
+        add(new JLabel());
         
         backButton = new JButton("Back to Menu");
         backButton.setActionCommand("BACK");
@@ -48,10 +54,10 @@ public class UpdateProductPanel extends JPanel
         return idField.getText();
     }
     public String getPrice() {
-        return idField.getText();
+        return priceField.getText();
     }
     public String getQuantity() {
-        return idField.getText();
+        return quantityField.getText();
     }
     public void showMessage(String msg)
     {
