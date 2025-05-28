@@ -34,15 +34,14 @@ public class ProductDAO {
     private void createProductTable() {
         // SQL statement to create a products table with the following columns:
         // ID (Primary key), Name, Category, price, quantity
-        // Using 'IF NOT EXISTS' will prevent errors when application restarts
-        // and ensures that the table exists without checking manually
-        String createTableSQL = "CREATE TABLE IF NOT EXISTS products ("
-                + "id INT PRIMARY KEY, "
-                + "name VARCHAR(100), "
-                + "category VARCHAR(100), "
-                + "price DOUBLE, "
-                + "quantity INT"
-                + ")";
+        
+        String createTableSQL = "CREATE TABLE products ("
+            + "id INT PRIMARY KEY, "
+            + "name VARCHAR(100), "
+            + "category VARCHAR(100), "
+            + "price DOUBLE, "
+            + "quantity INT"
+            + ")";
 
         try (Statement stmt = connection.createStatement()) {
             // Execute the sql statement to create the table
