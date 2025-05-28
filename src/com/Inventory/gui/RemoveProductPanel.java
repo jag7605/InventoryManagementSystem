@@ -21,6 +21,8 @@ public class RemoveProductPanel extends JPanel
     {
         setLayout(new GridLayout(6, 2, 10, 10));
         
+        setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
+        
         add(new JLabel("Enter Product ID to Remove"));
         idField = new JTextField();
         add(idField);
@@ -28,15 +30,19 @@ public class RemoveProductPanel extends JPanel
         messageLabel = new JLabel();
         add(messageLabel);
         
-        removeButton = new JButton("Remove Product");
-        removeButton.setActionCommand("REMOVE");
-        removeButton.addActionListener(removeHandler);
-        add(removeButton);
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 0));
         
         backButton = new JButton("Back to Menu");
         backButton.setActionCommand("BACK");
         backButton.addActionListener(backListener);
-        add(backButton);
+        buttonPanel.add(backButton);
+        
+        removeButton = new JButton("Remove Product");
+        removeButton.setActionCommand("REMOVE");
+        removeButton.addActionListener(removeHandler);
+        buttonPanel.add(removeButton);
+        
+        add(buttonPanel);
     }
     
     public String getID() 

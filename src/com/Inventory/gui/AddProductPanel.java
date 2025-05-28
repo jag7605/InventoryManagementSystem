@@ -25,6 +25,9 @@ public class AddProductPanel extends JPanel
         // layout with 7 rows 2 collums
         setLayout(new GridLayout(7, 2, 10, 10));
         
+        // Add padding to the panel directly
+        setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
+        
         // label for product id field
         add(new JLabel("Product ID"));
         
@@ -56,18 +59,22 @@ public class AddProductPanel extends JPanel
         add(messageLabel);
         
         // create addProduct button
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 0));
+        
+        backButton = new JButton("Back to Menu");
+        backButton.setActionCommand("BACK");
+        backButton.addActionListener(backListener);
+        buttonPanel.add(backButton);
+        
         addButton = new JButton("Add Product");
         // command action for the button 
         addButton.setActionCommand("APP_PRODUCT");
         // action listener when button clicks
         addButton.addActionListener(actionHandler);
         // add the button to panel 
-        add(addButton);
+        buttonPanel.add(addButton);
         
-        backButton = new JButton("Back to Menu");
-        backButton.setActionCommand("BACK");
-        backButton.addActionListener(backListener);
-        add(backButton);
+        add(buttonPanel);
     }
     
     // getter method to retrieve product id from textField
