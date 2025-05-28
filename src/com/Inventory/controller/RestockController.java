@@ -14,6 +14,7 @@ import java.util.List;
  * @author jagrithnarayan
  */
 // this class handles the restock logic. Will return a list of products that need to be restocked for the gui to display
+// testing
 public class RestockController {
     
      private final ProductController productController; // reference to inventory manager

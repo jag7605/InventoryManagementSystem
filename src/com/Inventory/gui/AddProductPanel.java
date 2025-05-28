@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
  * @author jagrithnarayan
  */
 
+// testing
 public class AddProductPanel extends JPanel
 {
     private JTextField idField, nameField, categoryField, priceField, quantityField;

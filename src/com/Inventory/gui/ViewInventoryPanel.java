@@ -12,6 +12,7 @@ import com.Inventory.model.Product;
  *
  * @author jagrithnarayan
  */
+//testing
 public class ViewInventoryPanel extends JPanel{
     private JTable table;
     private DefaultTableModel tableModel;

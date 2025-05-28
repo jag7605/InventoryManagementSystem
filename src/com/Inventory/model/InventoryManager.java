@@ -12,6 +12,7 @@ import java.util.List;
  */
 // This class connects the GUI to the database.
 // It uses methods from ProductDAO to handle all the product actions like add, update, and remove.
+//testing
 public class InventoryManager {
     
     // create a reference to ProductDAO to get access to database operations

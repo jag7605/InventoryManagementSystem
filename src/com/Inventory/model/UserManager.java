@@ -10,6 +10,7 @@ package com.Inventory.model;
  */
 // This class is used to manage user permissions. The function will check if the password entered is either the staff or admin password
 // and will return the matching user role.
+// tetsing
 public class UserManager {
 
     // String variables to hold the admin and staff passwords

@@ -11,6 +11,7 @@ import java.util.List;
  * @author jagrithnarayan
  */
 // Product Statistics class that will include methods to calculate and return different statistics based on the inventory 
+// tetsing
 public class ProductStatistics {
 
     // Method to calculate the total stock value of the current inventory

@@ -11,6 +11,7 @@ import com.Inventory.model.Product;
  *
  * @author lee71
  */
+// testing
 public class RestockAlertPanel extends JPanel
 {
     private JTextArea alertArea;

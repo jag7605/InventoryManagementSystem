@@ -17,7 +17,7 @@ public class RemoveProductPanel extends JPanel
     private JButton removeButton, backButton;
     private JLabel messageLabel;
     
-    public RemoveProductPanel(ActionListener actionHandler, ActionListener backListener) 
+    public RemoveProductPanel(ActionListener removeHandler, ActionListener backListener) 
     {
         setLayout(new GridLayout(4, 2, 10, 10));
         
@@ -27,6 +27,11 @@ public class RemoveProductPanel extends JPanel
         
         messageLabel = new JLabel();
         add(messageLabel);
+        
+        removeButton = new JButton("Remove Product");
+        removeButton.setActionCommand("REMOVE");
+        removeButton.addActionListener(removeHandler);
+        add(removeButton);
         
         backButton = new JButton("Back to Menu");
         backButton.setActionCommand("BACK");

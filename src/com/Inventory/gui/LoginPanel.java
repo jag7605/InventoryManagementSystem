@@ -12,6 +12,7 @@ import javax.swing.*;  // Import Swing components like JPanel, JLabel, JButton
 import java.awt.*;  // layout managers
 import java.awt.event.ActionListener; // button clicks to be ahndled with an external listener
 
+// testing
 public class LoginPanel extends JPanel
 {
     private JTextField passwordField;  // Input field for password
