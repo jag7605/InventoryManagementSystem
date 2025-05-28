@@ -5,6 +5,7 @@
 package com.Inventory.gui;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.List;
 import com.Inventory.model.Product;
 /**
@@ -15,8 +16,9 @@ import com.Inventory.model.Product;
 public class RestockAlertPanel extends JPanel
 {
     private JTextArea alertArea;
+    private JButton backButton;
     
-    public RestockAlertPanel()
+    public RestockAlertPanel(ActionListener backListener)
     {
         setLayout(new BorderLayout());
         
@@ -27,6 +29,13 @@ public class RestockAlertPanel extends JPanel
         
         // add a scroll to the text area
         add(new JScrollPane(alertArea), BorderLayout.CENTER);
+        
+        backButton = new JButton("Back to Menu");
+        backButton.setActionCommand("BACK");
+        backButton.addActionListener(backListener);
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.add(backButton);
+        add(bottomPanel, BorderLayout.SOUTH);
     }
     
     public void displayAlerts(List<Product> lowStockProducts)

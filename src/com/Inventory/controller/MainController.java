@@ -44,7 +44,7 @@ public class MainController {
         addPanel = new AddProductPanel(new AddProductListener(), new BackToMenuListener());
         panelManager.addPanel("addProduct", addPanel);
 
-        viewPanel = new ViewInventoryPanel();
+        viewPanel = new ViewInventoryPanel(new BackToMenuListener());
         panelManager.addPanel("viewInventory", viewPanel);
 
         updatePanel = new UpdateProductPanel(new UpdateProductListener(), new BackToMenuListener());
@@ -53,7 +53,7 @@ public class MainController {
         removePanel = new RemoveProductPanel(new RemoveProductListener(), new BackToMenuListener());
         panelManager.addPanel("removeProduct", removePanel);
 
-        restockPanel = new RestockAlertPanel();
+        restockPanel = new RestockAlertPanel(new BackToMenuListener());
         panelManager.addPanel("restock", restockPanel);
         
         // show login screen

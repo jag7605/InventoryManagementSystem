@@ -6,6 +6,7 @@ package com.Inventory.gui;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.List;
 import com.Inventory.model.Product;
 /**
@@ -16,8 +17,9 @@ import com.Inventory.model.Product;
 public class ViewInventoryPanel extends JPanel{
     private JTable table;
     private DefaultTableModel tableModel;
+    private JButton backButton;
     
-    public ViewInventoryPanel() {
+    public ViewInventoryPanel(ActionListener backListener) {
         setLayout(new BorderLayout());
         
         // columns names for the table
@@ -32,6 +34,13 @@ public class ViewInventoryPanel extends JPanel{
         //mzake the table scrollable
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER);
+        
+        backButton = new JButton("Back to Menu");
+        backButton.setActionCommand("BACK");
+        backButton.addActionListener(backListener);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(backButton);
+        add(buttonPanel, BorderLayout.SOUTH);
     }
     
     // now fill the table witjh product data
