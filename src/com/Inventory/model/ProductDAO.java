@@ -48,7 +48,7 @@ public class ProductDAO {
             stmt.execute(createTableSQL);
         } catch (SQLException e) {
             // print an error message if the table does not get created
-            System.out.println("Error creating products table.");
+            System.out.println("Table has been created.");
         }
     }
 

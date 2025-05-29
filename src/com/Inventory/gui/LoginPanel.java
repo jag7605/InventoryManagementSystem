@@ -28,7 +28,7 @@ public class LoginPanel extends JPanel
         
         
         // Title Label
-        JLabel title = new JLabel("Inventory Management Login"); // Title tex
+        JLabel title = new JLabel("Inventory Management System"); // Title tex
         title.setFont(new Font("Arial", Font.BOLD, 18));  // set font size and style
         gbc.gridx = 0;  // X position
         gbc.gridy = 0;  // Y position

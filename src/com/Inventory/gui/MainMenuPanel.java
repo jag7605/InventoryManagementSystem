@@ -36,7 +36,7 @@ public class MainMenuPanel extends JPanel
         // o rows , 1 column , 10px horizontal and vertical gaps in between components
         setLayout(new GridLayout(0, 1, 10, 10));
         
-         setBorder(BorderFactory.createEmptyBorder(30, 100, 30, 100));
+        setBorder(BorderFactory.createEmptyBorder(30, 100, 30, 100));
         
         // create title label 
         JLabel title = new JLabel("Main Menu", JLabel.CENTER);
