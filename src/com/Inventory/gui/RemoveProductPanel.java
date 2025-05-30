@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 /**
  *
- * @author jagrithnarayan
+ * @author lee71
  */
 public class RemoveProductPanel extends JPanel 
 {

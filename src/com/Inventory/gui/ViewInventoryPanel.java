@@ -11,7 +11,7 @@ import java.util.List;
 import com.Inventory.model.Product;
 /**
  *
- * @author jagrithnarayan
+ * @author lee71
  */
 //testing
 public class ViewInventoryPanel extends JPanel{

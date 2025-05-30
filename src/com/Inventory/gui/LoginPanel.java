@@ -6,7 +6,7 @@ package com.Inventory.gui;
 
 /**
  *
- * @author jagrithnarayan
+ * @author lee71
  */
 import javax.swing.*;  // Import Swing components like JPanel, JLabel, JButton
 import java.awt.*;  // layout managers

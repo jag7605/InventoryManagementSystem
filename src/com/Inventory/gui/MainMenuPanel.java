@@ -6,7 +6,7 @@ package com.Inventory.gui;
 
 /**
  *
- * @author jagrithnarayan
+ * @author lee71
  */
 import javax.swing.*;
 import java.awt.*;

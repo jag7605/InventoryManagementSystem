@@ -12,7 +12,7 @@ import java.awt.event.*;
 import java.util.List;
 /**
  *
- * @author jagrithnarayan
+ * @author lee71
  */
 // testing
 public class MainController {
@@ -41,9 +41,11 @@ public class MainController {
         loginPanel = new LoginPanel(new LoginHandler());
         panelManager.addPanel("login", loginPanel);
         
+        // craete and add add product panels
         addPanel = new AddProductPanel(new AddProductListener(), new BackToMenuListener());
         panelManager.addPanel("addProduct", addPanel);
 
+        // create and add view inventory panels
         viewPanel = new ViewInventoryPanel(new BackToMenuListener());
         panelManager.addPanel("viewInventory", viewPanel);
 
@@ -71,8 +73,10 @@ public class MainController {
             
             if(role != null)
             {
+                // determine if the user is admin
                 isAdmin = role.equalsIgnoreCase("admin");
                 
+                // initialize main menu with proper permissions
                 mainMenuPanel = new MainMenuPanel(new MenuActionHandler(), isAdmin);
                 panelManager.addPanel("menu", mainMenuPanel);
                 
@@ -85,6 +89,7 @@ public class MainController {
         }
     }
     
+    // this is use to return to main menu when you click the button "BACK"
     private class BackToMenuListener implements ActionListener 
     {
         @Override
@@ -156,6 +161,7 @@ public class MainController {
         }
     }
     
+    // handles add product from submission
     private class AddProductListener implements ActionListener
     {
         @Override
@@ -168,14 +174,24 @@ public class MainController {
                 double price = Double.parseDouble(addPanel.getPrice());
                 int qty = Integer.parseInt(addPanel.getQuantity());
                 
+                // error handling make sure category doesn't have numbers
+                if (!category.matches("[a-zA-Z ]+")) 
+                {
+                    addPanel.showMessage("Category must contain only letters.");
+                    return;
+                }
+                
+                // create and add product 
                 Product product = new Product(id, name, category, price, qty);
                 if(productController.addProduct(product))
                 {
+                    // product added successfully msg
                     addPanel.showMessage("Product added successfully.");
                     addPanel.clearFields();
                 }
                 else
                 {
+                    // product already exist msg
                     addPanel.showMessage("Product already exists");
                 }
             } catch (NumberFormatException ex)
@@ -185,6 +201,7 @@ public class MainController {
         }
     }
     
+    // handle product updating submission
     private class UpdateProductListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -195,12 +212,14 @@ public class MainController {
 
                 if (productController.updateProduct(id, price, qty)) 
                 {
+                    // product succefully updated
                     updatePanel.showMessage("Product updated.");
                     updatePanel.clearFields();
                 } 
                 
                 else 
                 {
+                    // if id doesn't exist msg
                     updatePanel.showMessage("Product not found.");
                 }
                 
@@ -211,6 +230,7 @@ public class MainController {
         }
     }
     
+    // handles product removing submission
     private class RemoveProductListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -218,12 +238,14 @@ public class MainController {
                 int id = Integer.parseInt(removePanel.getID());
                 if (productController.removeProduct(id)) 
                 {
+                    // product remove successfully msg
                     removePanel.showMessage("Product removed.");
                     removePanel.clearField();
                 } 
                 
                 else 
                 {
+                    // product id doesn't exist msg
                     removePanel.showMessage("Product ID not found.");
                 }
             } catch (NumberFormatException ex) 

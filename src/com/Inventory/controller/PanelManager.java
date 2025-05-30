@@ -8,8 +8,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
 /**
- *
- * @author jagrithnarayan
+ * PanelManager is responsible for managing the switching between different GUI panels
+ * using CardLayout. 
+ * @author lee71
  */
 // testing
 public class PanelManager 
@@ -18,6 +19,9 @@ public class PanelManager
     private final JPanel container;
     private final HashMap<String, JPanel> panelMap;
     
+    
+    // constructor: Initialize the layout and main container, 
+    // sets up JFrame to use this container.
     public PanelManager(JFrame frame)
     {
         this.layout = new CardLayout();
@@ -32,15 +36,17 @@ public class PanelManager
     
     public void addPanel(String name, JPanel panel)
     {
-        panelMap.put(name, panel);
-        container.add(panel, name);
+        panelMap.put(name, panel);  // store the panel in the map
+        container.add(panel, name);  // add the panel to the CardLayout container
     }
     
+    // display the panel associated with the given name
     public void showPanel(String name)
     {
         layout.show(container,name);
     }
     
+    // retrives the panel associated with the given name
     public JPanel getPanel(String name)
     {
         return panelMap.get(name);
