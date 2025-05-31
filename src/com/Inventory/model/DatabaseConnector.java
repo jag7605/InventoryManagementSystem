@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author jagrithnarayan
  */
 // This class will be used to connect to our embedded databases
-// testing
+
 public class DatabaseConnector {
 
     // Store the database connection that will be used for the entire project

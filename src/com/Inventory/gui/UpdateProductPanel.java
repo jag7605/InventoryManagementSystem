@@ -10,12 +10,12 @@ import java.awt.event.ActionListener;
  *
  * @author lee71
  */
-// testing
-public class UpdateProductPanel extends JPanel
+
+public class UpdateProductPanel extends ProductPanelBase
 {
     private JTextField idField, priceField, quantityField;
     private JButton updateButton, backButton;
-    private JLabel messageLabel;
+
    
     public UpdateProductPanel(ActionListener actionHandler, ActionListener backListener)
     {
@@ -35,9 +35,8 @@ public class UpdateProductPanel extends JPanel
         quantityField = new JTextField();
         add(quantityField);
         
-        messageLabel = new JLabel();
-        add(messageLabel);
-        add(new JLabel());
+        add(messageLabel); // Inherited from base class
+        add(new JLabel()); 
         
         backButton = new JButton("Back to Menu");
         backButton.setActionCommand("BACK");
@@ -50,22 +49,21 @@ public class UpdateProductPanel extends JPanel
         add(updateButton);
     }
     
+    @Override
     public String getID() {
         return idField.getText();
     }
+    
     public String getPrice() {
         return priceField.getText();
     }
     public String getQuantity() {
         return quantityField.getText();
     }
-    public void showMessage(String msg)
-    {
-        messageLabel.setText(msg);
-    }
     
-    public void clearFields()
-    {
+    
+    @Override
+    public void clearFields() {
         idField.setText("");
         priceField.setText("");
         quantityField.setText("");

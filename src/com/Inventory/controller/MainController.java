@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author lee71
  */
-// testing
+
 public class MainController {
     private final PanelManager panelManager;
     private final ProductController productController;
@@ -168,7 +168,7 @@ public class MainController {
         public void actionPerformed(ActionEvent e) 
         {
             try{
-                int id = Integer.parseInt(addPanel.getId());
+                int id = Integer.parseInt(addPanel.getID());
                 String name = addPanel.getName();
                 String category = addPanel.getCategory();
                 double price = Double.parseDouble(addPanel.getPrice());
@@ -220,12 +220,12 @@ public class MainController {
                 else 
                 {
                     // if id doesn't exist msg
-                    updatePanel.showMessage("Product not found.");
+                    updatePanel.showMessage("Product not found. Please enter a valid Product ID");
                 }
                 
             } catch (NumberFormatException ex) 
             {
-                updatePanel.showMessage("Invalid input.");
+                updatePanel.showMessage("Invalid input. Please enter numbers in these fields.");
             }
         }
     }
@@ -240,17 +240,17 @@ public class MainController {
                 {
                     // product remove successfully msg
                     removePanel.showMessage("Product removed.");
-                    removePanel.clearField();
+                    removePanel.clearFields();
                 } 
                 
                 else 
                 {
                     // product id doesn't exist msg
-                    removePanel.showMessage("Product ID not found.");
+                    removePanel.showMessage("Product ID not found. Please enter a valid Product ID");
                 }
             } catch (NumberFormatException ex) 
             {
-                removePanel.showMessage("Invalid input.");
+                removePanel.showMessage("Invalid input. Please enter a valid Product ID");
             }
         }
     }

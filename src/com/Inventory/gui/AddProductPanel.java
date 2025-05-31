@@ -5,7 +5,6 @@
 package com.Inventory.gui;
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
@@ -13,12 +12,12 @@ import java.awt.event.ActionListener;
  * @author lee71
  */
 
-// testing
-public class AddProductPanel extends JPanel
+
+public class AddProductPanel extends ProductPanelBase
 {
     private JTextField idField, nameField, categoryField, priceField, quantityField;
     private JButton addButton, backButton;
-    private JLabel messageLabel;
+
     
     public AddProductPanel(ActionListener actionHandler, ActionListener backListener) 
     {
@@ -53,10 +52,10 @@ public class AddProductPanel extends JPanel
         quantityField = new JTextField();
         add(quantityField);
         
-        // displaying message dk if we need it we can rmv it if me don't need it
-        messageLabel = new JLabel("");
+        
         // make the message label to panel
-        add(messageLabel);
+        // messagelabel was inherited from ProductPanelBase class
+        add(messageLabel); // initialised in the base class constructor
         
         // create addProduct button
         JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 0));
@@ -78,23 +77,22 @@ public class AddProductPanel extends JPanel
     }
     
     // getter method to retrieve product id from textField
-    public String getId() { return idField.getText();}
-    public String getName() { return nameField.getText();}
-    public String getCategory() { return categoryField.getText();}
-    public String getPrice() { return priceField.getText();}
-    public String getQuantity() { return quantityField.getText();}
+    // overriden from the base class
+    @Override
+    public String getID() { return idField.getText(); }
     
-    public void showMessage(String msg)
-    {
-    messageLabel.setText(msg);
-    }
+    public String getName() { return nameField.getText(); }
+    public String getCategory() { return categoryField.getText(); }
+    public String getPrice() { return priceField.getText(); }
+    public String getQuantity() { return quantityField.getText(); }
     
-    public void clearFields()
-    {
-        idField.setText("");  // clear product id
-        nameField.setText("");  // clear name field
-        categoryField.setText("");  // clear category
-        priceField.setText("");  // clear price
-        quantityField.setText("");  // clear quantity
+    // override the clear field method to clear the fields that only appear in the add product panel
+    @Override
+    public void clearFields() {
+        idField.setText("");
+        nameField.setText("");
+        categoryField.setText("");
+        priceField.setText("");
+        quantityField.setText("");
     }
 }

@@ -10,10 +10,10 @@ import java.util.List;
  *
  * @author jagrithnarayan
  */
-// This class connects the GUI to the database.
-// It uses methods from ProductDAO to handle all the product actions like add, update, and remove.
-//testing
-public class InventoryManager {
+// This class manages all product-related operations such as add, update, remove, and retrieval.
+// It Implements ProductOperations interface for inventory tasks and Uses methods from ProductDAO class for database actions.
+
+public class InventoryManager implements ProductOperations {
     
     // create a reference to ProductDAO to get access to database operations
     private final ProductDAO productDAO;

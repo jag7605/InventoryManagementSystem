@@ -4,7 +4,6 @@
  */
 package com.Inventory.controller;
 
-import com.Inventory.model.InventoryManager;
 import com.Inventory.model.Product;
 import com.Inventory.model.RestockManager;
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.List;
  * @author lee71
  */
 // this class handles the restock logic. Will return a list of products that need to be restocked for the gui to display
-// testing
+
 public class RestockController {
     
      private final ProductController productController; // reference to inventory manager

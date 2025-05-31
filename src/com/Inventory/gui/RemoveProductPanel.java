@@ -11,11 +11,11 @@ import java.awt.event.ActionListener;
  *
  * @author lee71
  */
-public class RemoveProductPanel extends JPanel 
+public class RemoveProductPanel extends ProductPanelBase 
 {
     private JTextField idField;
     private JButton removeButton, backButton;
-    private JLabel messageLabel;
+
     
     public RemoveProductPanel(ActionListener removeHandler, ActionListener backListener) 
     {
@@ -27,8 +27,7 @@ public class RemoveProductPanel extends JPanel
         idField = new JTextField();
         add(idField);
         
-        messageLabel = new JLabel();
-        add(messageLabel);
+        add(messageLabel); // Inherited from base class
         
         JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 0));
         
@@ -45,17 +44,14 @@ public class RemoveProductPanel extends JPanel
         add(buttonPanel);
     }
     
+    @Override
     public String getID() 
     {
         return idField.getText();
     }
     
-    public void showMessage(String msg)
-    {
-        messageLabel.setText(msg);
-    }
-    
-    public void clearField(){
+    @Override
+    public void clearFields(){
         idField.setText("");
     }
 }

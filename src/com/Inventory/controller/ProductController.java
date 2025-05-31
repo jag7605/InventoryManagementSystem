@@ -16,7 +16,7 @@ import java.util.List;
 
 // this class will handle product related actions triggered by the gui. 
 // Main class will call these methods to add, remove and update products instead of directly accessing the model package
-// testing
+
 public class ProductController {
     
     private final InventoryManager inventoryManager; // reference to inventory manager

@@ -12,7 +12,7 @@ import com.Inventory.model.Product;
  *
  * @author lee71
  */
-// testing
+
 public class RestockAlertPanel extends JPanel
 {
     private JTextArea alertArea;
@@ -41,7 +41,7 @@ public class RestockAlertPanel extends JPanel
     public void displayAlerts(List<Product> lowStockProducts)
     {
         // create a header for the alert display
-        StringBuilder sb = new StringBuilder("Restock Alerts:\n\n");
+        StringBuilder sb = new StringBuilder("Restock Alerts (items with less than 5 units in inventory):\n\n");
         
         // loop through each low stock product 
         for(Product p: lowStockProducts)

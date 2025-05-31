@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-// tetsing
+
 public class MainMenuPanel extends JPanel
 {
     // method to create and configure buttons

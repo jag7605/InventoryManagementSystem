@@ -12,7 +12,7 @@ import java.util.HashMap;
  * using CardLayout. 
  * @author lee71
  */
-// testing
+
 public class PanelManager 
 {
     private final CardLayout layout;

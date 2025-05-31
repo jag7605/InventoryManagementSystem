@@ -9,7 +9,7 @@ package com.Inventory.model;
  * @author Jagrith Narayan
  */
 // Product class to set the details of the product
-// tetsing
+
 public class Product {
 
     // Initialising variables 

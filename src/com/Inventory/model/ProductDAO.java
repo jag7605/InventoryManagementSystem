@@ -16,7 +16,7 @@ import java.util.List;
 // database from the rest of the application logic 
 // This class will be used to handle the database interactions for product management.
 // Will include methods to add, remove and update products from the database.
-// tetsing
+
 public class ProductDAO {
 
     // Set the database connection
